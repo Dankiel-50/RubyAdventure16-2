@@ -10906,6 +10906,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8405238953757910588, guid: 6c2458618575bec4f8770087ed48cf73, type: 3}
+      propertyPath: dizzy
+      value: 
+      objectReference: {fileID: 989629577274264548, guid: 216f4b62475c1144ca36c548e21496be, type: 3}
+    - target: {fileID: 8405238953757910588, guid: 6c2458618575bec4f8770087ed48cf73, type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9b1bb1f450b7d444fa4a8019d13519a7, type: 3}
+    - target: {fileID: 8405238953757910588, guid: 6c2458618575bec4f8770087ed48cf73, type: 3}
+      propertyPath: throwSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b2edfd40873655249ba0e01a5cf705be, type: 3}
+    - target: {fileID: 8405238953757910588, guid: 6c2458618575bec4f8770087ed48cf73, type: 3}
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 7171557462477864515, guid: d60cadaf9c9650047810935f882f340a, type: 3}
