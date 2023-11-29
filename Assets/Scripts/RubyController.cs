@@ -13,8 +13,6 @@ public class RubyController : MonoBehaviour
     public AudioClip throwSound;
     public AudioClip hitSound;
 
-    public ParticleSystem dizzy;
-
     public int health { get { return currentHealth; } }
     int currentHealth;
 
@@ -104,7 +102,6 @@ public class RubyController : MonoBehaviour
 
             isInvincible = true;
             invincibleTimer = timeInvincible;
-            ParticleSystem projectileObject = Instantiate(dizzy, transform.position, Quaternion.identity);
 
             PlaySound(hitSound);
         }
