@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RubyController : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class RubyController : MonoBehaviour
     Rigidbody2D rigidbody2d;
     float horizontal;
     float vertical;
+    public int score;
 
     Animator animator;
     Vector2 lookDirection = new Vector2(1, 0);
