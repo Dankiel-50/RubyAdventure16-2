@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -30,6 +31,7 @@ public class Projectile : MonoBehaviour
         if (e != null)
         {
             e.Fix();
+            e.addScore();
         }
 
         Destroy(gameObject);

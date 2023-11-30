@@ -48,7 +48,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    void SetCountText()
+    public void SetCountText()
     {
         countText.text = "Score: " + count.ToString();
     }
@@ -94,11 +94,14 @@ public class EnemyController : MonoBehaviour
     public void Fix()
     {
         broken = false;
-        count = count + 1;
-        SetCountText();
         rigidbody2D.simulated = false;
         //optional if you added the fixed animation
         animator.SetTrigger("Fixed");
         smokeEffect.Stop();
+    }
+    public void addScore()
+    {
+        count = count + 1;
+        SetCountText();
     }
 }
