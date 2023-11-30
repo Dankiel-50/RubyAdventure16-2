@@ -31,7 +31,6 @@ public class Projectile : MonoBehaviour
         if (e != null)
         {
             e.Fix();
-            e.addScore();
         }
 
         Destroy(gameObject);
