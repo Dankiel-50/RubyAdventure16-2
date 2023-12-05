@@ -34,6 +34,9 @@ public class RubyController : MonoBehaviour
 
     AudioSource audioSource;
 
+    public AudioSource audioPlayer; 
+    public AudioSource audioPlayer1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +47,7 @@ public class RubyController : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -138,6 +142,19 @@ public class RubyController : MonoBehaviour
     {
         audioSource.PlayOneShot(clip);
     }
-    
-    
+//Code for Collision Box Sound Effect by Ryan Horton
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "CollisionTag")
+        {
+            audioPlayer.Play();
+        }
+
+        //Code for Frog Noise Interaction by Ryan Horton
+        if (collision.gameObject.tag == "CollisionQuake")
+        {
+            audioPlayer1.Play();
+        }
+    }
+
 }
