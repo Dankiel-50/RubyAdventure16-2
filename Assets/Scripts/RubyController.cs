@@ -34,7 +34,8 @@ public class RubyController : MonoBehaviour
 
     AudioSource audioSource;
 
-    public AudioSource audioPlayer; 
+    public AudioSource audioPlayer;
+    public AudioSource audioPlayer2;
     public AudioSource audioPlayer1;
     public AudioSource audioPlayer2;
 
@@ -163,7 +164,12 @@ public class RubyController : MonoBehaviour
             audioPlayer2.Play();
             Debug.Log("Swift picked up. Sound played.");
 
-            // Add any logic for power-up effects here
+            
+            //Code Code for Stabbing Plants by Garrett Smith
+        if (collision.gameObject.tag == "StabboTag")
+        {
+            audioPlayer2.Play();
         }
+    }
     }
 }
