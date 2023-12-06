@@ -41,10 +41,6 @@ public class RubyController : MonoBehaviour
     public AudioSource audioPlayer;
     public AudioSource audioPlayer2;
     public AudioSource audioPlayer1;
-<<<<<<< Updated upstream
-=======
-    public AudioSource audioPlayer2;
->>>>>>> Stashed changes
     public AudioSource audioPlayer3;
 
     // Start is called before the first frame update
@@ -165,25 +161,7 @@ public class RubyController : MonoBehaviour
         {
             audioPlayer1.Play();
         }
-<<<<<<< Updated upstream
-=======
 
-        
-        //Daniel did this one
-        if (collision.gameObject.tag == "CollisionChad")
-        {
-            audioPlayer2.Play();
-        }
-
-        if (collision.gameObject.tag == "Burger")
-        {
-            audioPlayer3.Play();
-            Burger.gameObject.SetActive(false);
-
-
-        }
-    }
->>>>>>> Stashed changes
 
         // Check for Swift Sound by Daniel Krupczak
         if (other.CompareTag("Swift"))
