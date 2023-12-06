@@ -6,8 +6,13 @@ TagManager:
   tags:
   - CollisionTag
   - CollisionQuake
+<<<<<<< Updated upstream
   - Swift
   - StabboTag
+=======
+  - CollisionChad
+  - Burger
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
