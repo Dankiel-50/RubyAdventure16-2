@@ -37,7 +37,7 @@ public class RubyController : MonoBehaviour
     public AudioSource audioPlayer;
     public AudioSource audioPlayer2;
     public AudioSource audioPlayer1;
-    public AudioSource audioPlayer2;
+    public AudioSource audioPlayer3;
 
     // Start is called before the first frame update
     void Start()
@@ -164,12 +164,13 @@ public class RubyController : MonoBehaviour
             audioPlayer2.Play();
             Debug.Log("Swift picked up. Sound played.");
 
+
             
-            //Code Code for Stabbing Plants by Garrett Smith
-        if (collision.gameObject.tag == "StabboTag")
-        {
-            audioPlayer2.Play();
         }
-    }
+        //Code Code for Stabbing Plants by Garrett Smith
+        if (other.gameObject.tag == "StabboTag")
+        {
+            audioPlayer3.Play();
+        }
     }
 }
