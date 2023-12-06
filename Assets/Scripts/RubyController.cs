@@ -37,6 +37,7 @@ public class RubyController : MonoBehaviour
     public AudioSource audioPlayer;
     public AudioSource audioPlayer2;
     public AudioSource audioPlayer1;
+    public AudioSource audioPlayer2;
 
     // Start is called before the first frame update
     void Start()
@@ -143,24 +144,32 @@ public class RubyController : MonoBehaviour
     {
         audioSource.PlayOneShot(clip);
     }
-//Code for Collision Box Sound Effect by Ryan Horton
-    public void OnCollisionEnter2D(Collision2D collision)
+ // Code for Collision Box Sound Effect by Ryan Horton
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "CollisionTag")
+        if (other.CompareTag("CollisionTag"))
         {
             audioPlayer.Play();
         }
 
-        //Code for Frog Noise Interaction by Ryan Horton
-        if (collision.gameObject.tag == "CollisionQuake")
+        // Code for Frog Noise Interaction by Ryan Horton
+        if (other.CompareTag("CollisionQuake"))
         {
             audioPlayer1.Play();
         }
-        //Code Code for Stabbing Plants by Garrett Smith
+
+        // Check for Swift Sound by Daniel Krupczak
+        if (other.CompareTag("Swift"))
+        {
+            audioPlayer2.Play();
+            Debug.Log("Swift picked up. Sound played.");
+
+            
+            //Code Code for Stabbing Plants by Garrett Smith
         if (collision.gameObject.tag == "StabboTag")
         {
             audioPlayer2.Play();
         }
     }
-
+    }
 }
