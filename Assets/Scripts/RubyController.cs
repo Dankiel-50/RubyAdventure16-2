@@ -12,6 +12,7 @@ public class RubyController : MonoBehaviour
     public int maxHealth = 5;
 
     public GameObject projectilePrefab;
+    public GameObject boomerang;
 
     public AudioClip throwSound;
     public AudioClip hitSound;
@@ -34,10 +35,11 @@ public class RubyController : MonoBehaviour
 
     AudioSource audioSource;
 
-    public AudioSource audioPlayer;
-    public AudioSource audioPlayer2;
+    public AudioSource audioPlayer; 
     public AudioSource audioPlayer1;
     public AudioSource audioPlayer2;
+    //Dan
+    public AudioSource audioPlayer3;
 
     // Start is called before the first frame update
     void Start()
@@ -84,6 +86,11 @@ public class RubyController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             Launch();
+        }
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            Launch2();
         }
 
         if (Input.GetKeyDown(KeyCode.X))
@@ -140,6 +147,25 @@ public class RubyController : MonoBehaviour
         PlaySound(throwSound);
     }
 
+    //boomerang that fixes robots - Daniel
+    private void Launch2()
+    {
+        GameObject boomerangObject = Instantiate(boomerang, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
+
+        Projectile2 boomerangProjectile = boomerangObject.GetComponent<Projectile2>();
+
+        float initialForce = 3f;
+
+        boomerangProjectile.Launch2(lookDirection, initialForce);
+
+        animator.SetTrigger("Launch");
+
+        PlaySound(throwSound);
+    }
+
+
+
+
     public void PlaySound(AudioClip clip)
     {
         audioSource.PlayOneShot(clip);
@@ -164,12 +190,17 @@ public class RubyController : MonoBehaviour
             audioPlayer2.Play();
             Debug.Log("Swift picked up. Sound played.");
 
-            
-            //Code Code for Stabbing Plants by Garrett Smith
-        if (collision.gameObject.tag == "StabboTag")
-        {
-            audioPlayer2.Play();
+            // Add any logic for power-up effects here
         }
+
+       
     }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Dan did this one
+        if(collision.gameObject.tag == "Rizz")
+        {
+            audioPlayer3.Play();
+        }
     }
 }

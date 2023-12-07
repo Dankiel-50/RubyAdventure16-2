@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.Diagnostics;
 
 public class EnemyController : MonoBehaviour
 {
@@ -12,10 +11,7 @@ public class EnemyController : MonoBehaviour
     private int count;
     public TextMeshProUGUI countText;
 
-    public AudioSource source;
-    public AudioClip clip;
-    //Garrett Smith Change
-
+    public AudioSource audioPlayer;
 
     public ParticleSystem smokeEffect;
 
@@ -102,11 +98,20 @@ public class EnemyController : MonoBehaviour
         count = count + 1;
         SetCountText();
         broken = false;
-        rigidbody2D.simulated = false;
+        
         //optional if you added the fixed animation
-        source.PlayOneShot(clip);
-        //Garrett Smith Change
         animator.SetTrigger("Fixed");
         smokeEffect.Stop();
+    }
+    //daniel did the fix2
+    public void Fix2()
+    {
+        count = count - 1;
+        SetCountText();
+        broken = true;
+        rigidbody2D.simulated = true;
+        //optional if you added the fixed animation
+        smokeEffect.Play();
+        audioPlayer.Play();
     }
 }
